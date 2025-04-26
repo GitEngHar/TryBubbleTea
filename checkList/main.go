@@ -59,10 +59,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "enter", " ":
 			_, ok := m.selected[m.cursor]
 			if ok {
-				print("save")
 				delete(m.selected, m.cursor)
 			} else {
-				print("not")
 				m.selected[m.cursor] = struct{}{}
 			}
 		}
