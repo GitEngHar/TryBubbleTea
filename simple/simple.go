@@ -3,7 +3,17 @@ package main
 import (
 	"fmt"
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 	"os"
+)
+
+var (
+	ashStyle   = lipgloss.NewStyle().Foreground(lipgloss.Color("#6b6d75"))
+	blueStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("12"))
+	mainItem   = "Count: %d"
+	commentKey = "[Space] %s\n[q] %s\n"
+	spaceValue = "increment"
+	quitValue  = "quit"
 )
 
 type model struct {
@@ -29,7 +39,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	return m, nil
 }
 func (m model) View() string {
-	return fmt.Sprintf("Count: %d\n[Space] increment\n[q] quit\n", m.count)
+	return fmt.Sprintf(blueStyle.Render(), m.count)
 }
 
 func main() {
