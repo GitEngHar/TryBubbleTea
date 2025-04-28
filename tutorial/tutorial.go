@@ -68,7 +68,7 @@ func (m model) View() string {
 	return fmt.Sprintf("Hi. This program will exit in %d seconds.\n\nTo quit sooner press ctrl-c, or press ctrl-z to suspend...\n", m)
 }
 
-// Messages are events that we respond to in our Update function. This
+// Messages are e	vents that we respond to in our Update function. This
 // particular one indicates that the timer has ticked.
 type tickMsg time.Time
 
